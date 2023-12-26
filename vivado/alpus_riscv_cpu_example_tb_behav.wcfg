@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="alpus_riscv_cpu_example_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="alpus_riscv_cpu_example_tb" />
+            <top_module name="alpus_riscv_cpu_pkg" />
+            <top_module name="alpus_riscv_cpu_serv_pkg" />
+            <top_module name="alpus_riscv_cpu_vex_pkg" />
+            <top_module name="alpus_wb32_pkg" />
+            <top_module name="firmware_mem_pkg" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="4.822 ns"></ZoomStartTime>
+      <ZoomEndTime time="323.091 ns"></ZoomEndTime>
+      <Cursor1Time time="35.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="325"></NameColumnWidth>
+      <ValueColumnWidth column_width="90"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="19" />
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/CLK_PERIOD" type="other">
+      <obj_property name="ElementShortName">CLK_PERIOD</obj_property>
+      <obj_property name="ObjectShortName">CLK_PERIOD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/cpu/vex/i/iBus_cmd_valid" type="logic">
+      <obj_property name="ElementShortName">iBus_cmd_valid</obj_property>
+      <obj_property name="ObjectShortName">iBus_cmd_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/cpu/vex/i/iBus_cmd_ready" type="logic">
+      <obj_property name="ElementShortName">iBus_cmd_ready</obj_property>
+      <obj_property name="ObjectShortName">iBus_cmd_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/cpu/vex/i/iBus_cmd_payload_pc" type="array">
+      <obj_property name="ElementShortName">iBus_cmd_payload_pc[31:0]</obj_property>
+      <obj_property name="ObjectShortName">iBus_cmd_payload_pc[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/cpu/vex/i/iBus_cmd_payload_pc_i" type="array">
+      <obj_property name="ElementShortName">iBus_cmd_payload_pc_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">iBus_cmd_payload_pc_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/cpu/vex/i/iBus_rsp_valid" type="logic">
+      <obj_property name="ElementShortName">iBus_rsp_valid</obj_property>
+      <obj_property name="ObjectShortName">iBus_rsp_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/cpu/vex/i/iBus_rsp_payload_inst" type="array">
+      <obj_property name="ElementShortName">iBus_rsp_payload_inst[31:0]</obj_property>
+      <obj_property name="ObjectShortName">iBus_rsp_payload_inst[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/cpu/vex/i/dBus_cmd_valid" type="logic">
+      <obj_property name="ElementShortName">dBus_cmd_valid</obj_property>
+      <obj_property name="ObjectShortName">dBus_cmd_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/cpu/vex/i/dBus_cmd_ready" type="logic">
+      <obj_property name="ElementShortName">dBus_cmd_ready</obj_property>
+      <obj_property name="ObjectShortName">dBus_cmd_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/cpu/vex/i/dBus_cmd_payload_wr" type="logic">
+      <obj_property name="ElementShortName">dBus_cmd_payload_wr</obj_property>
+      <obj_property name="ObjectShortName">dBus_cmd_payload_wr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/cpu/vex/i/dBus_cmd_payload_address" type="array">
+      <obj_property name="ElementShortName">dBus_cmd_payload_address[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dBus_cmd_payload_address[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/cpu/vex/i/dBus_cmd_payload_address_i" type="array">
+      <obj_property name="ElementShortName">dBus_cmd_payload_address_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dBus_cmd_payload_address_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/cpu/vex/i/dBus_cmd_payload_data" type="array">
+      <obj_property name="ElementShortName">dBus_cmd_payload_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dBus_cmd_payload_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/cpu/vex/i/dBus_cmd_payload_size" type="array">
+      <obj_property name="ElementShortName">dBus_cmd_payload_size[1:0]</obj_property>
+      <obj_property name="ObjectShortName">dBus_cmd_payload_size[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/cpu/vex/i/dBus_rsp_ready" type="logic">
+      <obj_property name="ElementShortName">dBus_rsp_ready</obj_property>
+      <obj_property name="ObjectShortName">dBus_rsp_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/cpu/vex/i/dBus_rsp_data" type="array">
+      <obj_property name="ElementShortName">dBus_rsp_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dBus_rsp_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/cpu/vex/i/vex/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+</wave_config>

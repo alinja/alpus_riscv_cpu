@@ -67,9 +67,11 @@ void __startup(void)
 #ifdef INCLUDE_STACK_CHECK
 	__stack_check_init();
 #endif
+	//TODO: clear globals
 	
-	int n = __init_array_end - __init_array_start;
+	//TODO: init value for globals
 	
+	//call constructors
 	for(fptr_t *p = __init_array_start; p != __init_array_end; p++) {
 		(**p)();
 	}
@@ -140,6 +142,13 @@ void timer_wait(long int ticks)
 		if(timer1 - timer0 > ticks) break;
 	}
 }
+void timer_wait_for_mtime(long int mtime)
+{
+	while(1) {
+		long int timer1 = get_mtime();
+		if(timer1 - mtime > 0) break;
+	}
+}
 
 static void __bitbang_uart_tx_setbit(int bit)
 {
@@ -153,21 +162,25 @@ static void __bitbang_uart_tx_setbit(int bit)
 //9600 baud for debugging
 void bitbang_uart_tx(char c)
 {
-	int bitdelay = 12400; //9600 baud @125MHz clk, 650 less than real
-	//int bitdelay = 2610; //2465-2795: 38400 baud
+	int bitdelay = TICKS_PER_MS*1000/9600;
+
+	long int mtime0 = get_mtime();
 
 	__bitbang_uart_tx_setbit(0); //start bit 
-	timer_wait(bitdelay);
+	mtime0 += bitdelay;
+	timer_wait_for_mtime(mtime0);
 
 	char mask=0x01;
 	for(int i=0; i<8; i++) { 
 		__bitbang_uart_tx_setbit(c & mask); //data0-7
 		mask += mask; //shift
-		timer_wait(bitdelay);
+		mtime0 += bitdelay;
+		timer_wait_for_mtime(mtime0);
 	}
 
 	__bitbang_uart_tx_setbit(1); //stop bit
-	timer_wait(bitdelay);
+	mtime0 += bitdelay;
+	timer_wait_for_mtime(mtime0);
 }
 
 const char __hex_lookup[] = "0123456789abcdef";

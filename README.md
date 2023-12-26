@@ -30,11 +30,17 @@ Serv folder contains olofk's serv (<https://github.com/olofk/serv>).
 
 ## vexriscv/
 
-This folder contains a pre-generated VexRiscV (<https://github.com/SpinalHDL/VexRiscv>)core. The Plus version runs at about
+This folder contains a pre-generated VexRiscV (<https://github.com/SpinalHDL/VexRiscv>) core. The Plus version runs at about
 2 to 3 clocks per instruction.
  
     Base: 982LC/536FF/113MHz (Cyclone III) (Benchmark 590ms @ 125MHz)
     Plus: 1162LC/566FF/107MHz (Cyclone III) (Benchmark 440ms @ 125MHz)
+
+## Synthesis notes
+
+Lattice Radiant has problems with VexRiscV memory and its combinatorial paths. Newer Quartus versions
+duplicate mamories. Gowin needs MEM_RTL_AREG := '1' and serv doesn't seem to work well on HW. Libero or Radiant output is not
+tested on hardware. Radiant doesn't infer block mems well.
 
 ## License
 

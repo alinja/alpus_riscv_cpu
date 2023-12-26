@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RadiantProject version="4.2" radiant="2023.1.1.200.1" title="alpus_riscv_cpu" device="LFD2NX-17-8MG121C" performance_grade="8_High-Performance_1.0V" default_implementation="impl_1">
+    <Options/>
+    <Implementation title="impl_1" dir="impl_1" description="impl_1" synthesis="lse" default_strategy="Strategy1">
+        <Options def_top="alpus_riscv_cpu_example" top="alpus_riscv_cpu_example"/>
+        <Source name="../alpus_riscv_cpu.vhd" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="../alpus_riscv_cpu_example.vhd" type="VHDL" type_short="VHDL">
+            <Options top_module="alpus_riscv_cpu_example"/>
+        </Source>
+        <Source name="../alpus_wb32_pkg.vhd" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="../vexriscv/VexRiscv_Plus.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../serv/serv_aligner.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../serv/serv_alu.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../serv/serv_bufreg.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../serv/serv_bufreg2.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../serv/serv_compdec.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../serv/serv_csr.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../serv/serv_ctrl.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../serv/serv_decode.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../serv/serv_immdec.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../serv/serv_mem_if.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../serv/serv_rf_if.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../serv/serv_rf_ram.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../serv/serv_rf_ram_if.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../serv/serv_rf_top.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../serv/serv_state.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../serv/serv_top.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../baremetal/firmware_mem_pkg.vhd" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="../config_pkg_custom_cyclone_iii.vhd" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="alpus_riscv_cpu.pdc" type="Physical Constraints File" type_short="PDC">
+            <Options/>
+        </Source>
+    </Implementation>
+    <Strategy name="Strategy1" file="alpus_riscv_cpu1.sty"/>
+</RadiantProject>

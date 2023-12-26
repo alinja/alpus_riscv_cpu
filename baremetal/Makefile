@@ -10,7 +10,7 @@ OBJS = crt0.o basic_lib.o my_class.o alintstone.o main.o
 
 all:	image.bin
 
-%.o: %.cpp
+%.o: %.cpp *.hpp
 	$(CC) -c $(CFLAGS) -o $@ $<
 
 crt0.o: crt0.S

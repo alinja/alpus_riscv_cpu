@@ -1,0 +1,588 @@
+KEY LIBERO "2023.2"
+KEY CAPTURE "2023.2.0.8"
+KEY DEFAULT_IMPORT_LOC ""
+KEY DEFAULT_OPEN_LOC ""
+KEY ProjectID "0"
+KEY HDLTechnology "VHDL"
+KEY VERILOGMODE "SYSTEMVERILOG"
+KEY VHDLMODE "VHDL2008"
+KEY SYSTEMVERILOGMFCU "FALSE"
+KEY UseConstraintFlowTechnology "TRUE"
+KEY VendorTechnology_Family "IGLOO2"
+KEY VendorTechnology_Die "PA4MGL1000_N"
+KEY VendorTechnology_Package "vf256"
+KEY VendorTechnology_Speed "STD"
+KEY VendorTechnology_DieVoltage "1.2"
+KEY VendorTechnology_PART_RANGE "COM"
+KEY VendorTechnology_DSW_VCCA_VOLTAGE_RAMP_RATE "100_MS"
+KEY VendorTechnology_IO_DEFT_STD "LVCMOS25"
+KEY VendorTechnology_OPCONR ""
+KEY VendorTechnology_PLL_SUPPLY "PLL_SUPPLY_25"
+KEY VendorTechnology_RAD_EXPOSURE ""
+KEY VendorTechnology_RESERVEMIGRATIONPINS "1"
+KEY VendorTechnology_RESTRICTPROBEPINS "1"
+KEY VendorTechnology_RESTRICTSPIPINS "0"
+KEY VendorTechnology_SYSTEM_CONTROLLER_SUSPEND_MODE "0"
+KEY VendorTechnology_TARGETDEVICESFORMIGRATION "PA4MGL1000_N"
+KEY VendorTechnology_TEMPR "COM"
+KEY VendorTechnology_UNUSED_MSS_IO_RESISTOR_PULL "None"
+KEY VendorTechnology_VCCI_1.2_VOLTR "COM"
+KEY VendorTechnology_VCCI_1.5_VOLTR "COM"
+KEY VendorTechnology_VCCI_1.8_VOLTR "COM"
+KEY VendorTechnology_VCCI_2.5_VOLTR "COM"
+KEY VendorTechnology_VCCI_3.3_VOLTR "COM"
+KEY VendorTechnology_VOLTR "COM"
+KEY ProjectLocation "Z:\proj\alpus\alpus_riscv_cpu\libero\alpus_riscv_cpu"
+KEY ProjectDescription ""
+KEY UseRootLocationForLinkedFiles "FALSE"
+KEY RootLocationENVForLinkedFiles ""
+KEY RootLocationForLinkedFiles ""
+KEY GlobalIncludePaths ""
+KEY Pa4PeripheralNewSeq "GOOD"
+KEY MemoryMapDrcSeverity "FALSE"
+KEY LossOfDataDRCSeverity "TRUE"
+KEY IdWidthMismatchDRCSeverity "TRUE"
+KEY SimulationType "VHDL"
+KEY Vendor "Actel"
+KEY ActiveRoot "alpus_riscv_cpu_example::work"
+LIST REVISIONS
+VALUE="Impl1",NUM=1
+VALUE="Impl2",NUM=2
+VALUE="Impl3",NUM=3
+VALUE="Impl4",NUM=4
+VALUE="Impl5",NUM=5
+VALUE="Impl6",NUM=6
+VALUE="Impl7",NUM=7
+CURREV=7
+ENDLIST
+LIST GlobalIncludeFileList
+ENDLIST
+LIST FileManager
+VALUE "<project>\constraint\alpus_riscv_cpu.sdc,sdc"
+STATE="utd"
+TIME="1702631405"
+SIZE="78"
+ENDFILE
+VALUE "<project>\synthesis\alpus_riscv_cpu_example.so,so"
+STATE="utd"
+TIME="1702632037"
+SIZE="273"
+ENDFILE
+VALUE "<project>\synthesis\alpus_riscv_cpu_example.vm,syn_vm"
+STATE="utd"
+TIME="1702632036"
+SIZE="257783"
+ENDFILE
+VALUE "<project>\synthesis\alpus_riscv_cpu_example_syn.prj,prj"
+STATE="utd"
+TIME="1702632037"
+SIZE="4078"
+ENDFILE
+VALUE "<project>\synthesis\alpus_riscv_cpu_example_vm.sdc,syn_sdc"
+STATE="utd"
+TIME="1702632036"
+SIZE="891"
+ENDFILE
+VALUE "Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_cpu.vhd,hdl"
+STATE="utd"
+TIME="1703613332"
+SIZE="22175"
+ENDFILE
+VALUE "Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_cpu_example.vhd,hdl"
+STATE="utd"
+TIME="1703612964"
+SIZE="3370"
+ENDFILE
+VALUE "Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_cpu_example_tb.vhd,hdl"
+STATE="utd"
+TIME="1702410266"
+SIZE="673"
+ENDFILE
+VALUE "Z:\proj\alpus\alpus_riscv_cpu\alpus_wb32_pkg.vhd,hdl"
+STATE="utd"
+TIME="1702410266"
+SIZE="1198"
+ENDFILE
+VALUE "Z:\proj\alpus\alpus_riscv_cpu\baremetal\firmware_mem_pkg.vhd,hdl"
+STATE="utd"
+TIME="1703614681"
+SIZE="85307"
+ENDFILE
+VALUE "Z:\proj\alpus\alpus_riscv_cpu\config_pkg_custom_cyclone_iii.vhd,hdl"
+STATE="utd"
+TIME="1703612545"
+SIZE="328"
+ENDFILE
+VALUE "Z:\proj\alpus\alpus_riscv_cpu\serv\serv_aligner.v,hdl"
+LINKFILEROOT "Z:/proj/alpus/alpus_riscv_cpu/serv"
+STATE="utd"
+TIME="1702412081"
+SIZE="2310"
+ENDFILE
+VALUE "Z:\proj\alpus\alpus_riscv_cpu\serv\serv_alu.v,hdl"
+LINKFILEROOT "Z:/proj/alpus/alpus_riscv_cpu/serv"
+STATE="utd"
+TIME="1702412081"
+SIZE="1908"
+ENDFILE
+VALUE "Z:\proj\alpus\alpus_riscv_cpu\serv\serv_bufreg.v,hdl"
+LINKFILEROOT "Z:/proj/alpus/alpus_riscv_cpu/serv"
+STATE="utd"
+TIME="1702412081"
+SIZE="1305"
+ENDFILE
+VALUE "Z:\proj\alpus\alpus_riscv_cpu\serv\serv_bufreg2.v,hdl"
+LINKFILEROOT "Z:/proj/alpus/alpus_riscv_cpu/serv"
+STATE="utd"
+TIME="1702412081"
+SIZE="2045"
+ENDFILE
+VALUE "Z:\proj\alpus\alpus_riscv_cpu\serv\serv_compdec.v,hdl"
+LINKFILEROOT "Z:/proj/alpus/alpus_riscv_cpu/serv"
+STATE="utd"
+TIME="1702412081"
+SIZE="8555"
+ENDFILE
+VALUE "Z:\proj\alpus\alpus_riscv_cpu\serv\serv_csr.v,hdl"
+LINKFILEROOT "Z:/proj/alpus/alpus_riscv_cpu/serv"
+STATE="utd"
+TIME="1702412081"
+SIZE="4030"
+ENDFILE
+VALUE "Z:\proj\alpus\alpus_riscv_cpu\serv\serv_ctrl.v,hdl"
+LINKFILEROOT "Z:/proj/alpus/alpus_riscv_cpu/serv"
+STATE="utd"
+TIME="1702412081"
+SIZE="2367"
+ENDFILE
+VALUE "Z:\proj\alpus\alpus_riscv_cpu\serv\serv_decode.v,hdl"
+LINKFILEROOT "Z:/proj/alpus/alpus_riscv_cpu/serv"
+STATE="utd"
+TIME="1702412081"
+SIZE="13026"
+ENDFILE
+VALUE "Z:\proj\alpus\alpus_riscv_cpu\serv\serv_immdec.v,hdl"
+LINKFILEROOT "Z:/proj/alpus/alpus_riscv_cpu/serv"
+STATE="utd"
+TIME="1702412081"
+SIZE="3033"
+ENDFILE
+VALUE "Z:\proj\alpus\alpus_riscv_cpu\serv\serv_mem_if.v,hdl"
+LINKFILEROOT "Z:/proj/alpus/alpus_riscv_cpu/serv"
+STATE="utd"
+TIME="1702412081"
+SIZE="2034"
+ENDFILE
+VALUE "Z:\proj\alpus\alpus_riscv_cpu\serv\serv_rf_if.v,hdl"
+LINKFILEROOT "Z:/proj/alpus/alpus_riscv_cpu/serv"
+STATE="utd"
+TIME="1702412081"
+SIZE="3994"
+ENDFILE
+VALUE "Z:\proj\alpus\alpus_riscv_cpu\serv\serv_rf_ram.v,hdl"
+LINKFILEROOT "Z:/proj/alpus/alpus_riscv_cpu/serv"
+STATE="utd"
+TIME="1702412081"
+SIZE="1203"
+ENDFILE
+VALUE "Z:\proj\alpus\alpus_riscv_cpu\serv\serv_rf_ram_if.v,hdl"
+LINKFILEROOT "Z:/proj/alpus/alpus_riscv_cpu/serv"
+STATE="utd"
+TIME="1702412081"
+SIZE="4117"
+ENDFILE
+VALUE "Z:\proj\alpus\alpus_riscv_cpu\serv\serv_rf_top.v,hdl"
+LINKFILEROOT "Z:/proj/alpus/alpus_riscv_cpu/serv"
+STATE="utd"
+TIME="1702412081"
+SIZE="6511"
+ENDFILE
+VALUE "Z:\proj\alpus\alpus_riscv_cpu\serv\serv_state.v,hdl"
+LINKFILEROOT "Z:/proj/alpus/alpus_riscv_cpu/serv"
+STATE="utd"
+TIME="1702412081"
+SIZE="8156"
+ENDFILE
+VALUE "Z:\proj\alpus\alpus_riscv_cpu\serv\serv_top.v,hdl"
+LINKFILEROOT "Z:/proj/alpus/alpus_riscv_cpu/serv"
+STATE="utd"
+TIME="1702412081"
+SIZE="17637"
+ENDFILE
+VALUE "Z:\proj\alpus\alpus_riscv_cpu\vexriscv\VexRiscv_Plus.v,hdl"
+STATE="utd"
+TIME="1702412074"
+SIZE="192849"
+ENDFILE
+ENDLIST
+LIST UsedFile
+ENDLIST
+LIST NewModulesInfo
+LIST "alpus_riscv_cpu_example::work"
+FILE "Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_cpu_example.vhd,hdl"
+LIST SynthesisConstraints
+VALUE "<project>\constraint\alpus_riscv_cpu.sdc,sdc"
+ENDLIST
+LIST TimingConstraints
+VALUE "<project>\constraint\alpus_riscv_cpu.sdc,sdc"
+ENDLIST
+LIST PNRConstraints
+VALUE "<project>\constraint\alpus_riscv_cpu.sdc,sdc"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl1
+ideSYNTHESIS(<project>\synthesis\alpus_riscv_cpu_example.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl2
+ideSYNTHESIS(<project>\synthesis\alpus_riscv_cpu_example.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl3
+ideSYNTHESIS(<project>\synthesis\alpus_riscv_cpu_example.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl4
+ideSYNTHESIS(<project>\synthesis\alpus_riscv_cpu_example.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl5
+ideSYNTHESIS(<project>\synthesis\alpus_riscv_cpu_example.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl6
+ideSYNTHESIS(<project>\synthesis\alpus_riscv_cpu_example.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl7
+ideSYNTHESIS(<project>\synthesis\alpus_riscv_cpu_example.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+ENDLIST
+LIST AssociatedStimulus
+ENDLIST
+LIST Other_Association
+ENDLIST
+LIST SimulationOptions
+UseAutomaticDoFile=true
+IncludeWaveDo=false
+Type=max
+RunTime=1000ns
+Resolution=1fs
+VsimOpt=
+EntityName=testbench
+TopInstanceName=<top>_0
+DoFileName=
+DoFileName2=wave.do
+DoFileParams=
+DisplayDUTWave=false
+LogAllSignals=false
+DisablePulseFiltering=false
+DumpVCD=false
+VCDFileName=power.vcd
+VHDL2008=false
+Verilog2001=false
+SystemVerilog=false
+TimeUnit=1
+TimeUnitBase=ns
+Precision=100
+PrecisionBase=ps
+ENDLIST
+LIST ModelSimLibPath
+UseCustomPath=FALSE
+LibraryPath=
+ENDLIST
+LIST GlobalFlowOptions
+GenerateHDLAfterSynthesis=FALSE
+GenerateHDLAfterPhySynthesis=FALSE
+RunDRCAfterSynthesis=FALSE
+AutoCheckConstraints=TRUE
+UpdateModelSimIni=TRUE
+NoIOMode=FALSE
+PeriInitStandalone=FALSE
+OnDemandBuildDH=TRUE
+EnableViewDraw=FALSE
+UpdateViewDrawIni=TRUE
+GenerateHDLFromSchematic=TRUE
+VmNetlistFlowOn=TRUE
+EnableDesignSeparationOn=FALSE
+EnableSETMitigationOn=FALSE
+DisplayFanoutLimit=10
+AbortFlowOnPDCErrorsOn=TRUE
+AbortFlowOnSDCErrorsOn=TRUE
+AbortFlowOn3.3V_IO_ON=FALSE
+InstantiateInSmartDesign=TRUE
+FlashProInputFile=pdb
+SmartGenCompileReport=T
+ENDLIST
+LIST PhySynthesisOptions
+ENDLIST
+LIST Profiles
+NAME="SoftConsole"
+FUNCTION="SoftwareIDE"
+TOOL="SoftConsole"
+LOCATION="eclipse.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="Synplify Pro ME"
+FUNCTION="Synthesis"
+TOOL="Synplify Pro ME"
+LOCATION="C:\Microchip\Libero_SoC_v2023.2\SynplifyPro\bin\synplify_pro.exe"
+PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
+BATCH=1
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="ModelSim ME Pro"
+FUNCTION="Simulation"
+TOOL="ModelSim Pro Edition"
+LOCATION="C:\Microchip\Libero_SoC_v2023.2\ModelSimPro\win32acoem\modelsim.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="Identify Debugger"
+FUNCTION="IdentifyDebugger"
+TOOL="Identify Debugger"
+LOCATION="C:\Microchip\Libero_SoC_v2023.2\Identify\bin\identify_debugger.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+ENDLIST
+LIST ProjectState5.1
+LIST "alpus_riscv_cpu_example::work"
+LIST Impl1
+ideSYNTHESIS(<project>\synthesis\alpus_riscv_cpu_example.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl2
+ideSYNTHESIS(<project>\synthesis\alpus_riscv_cpu_example.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl3
+ideSYNTHESIS(<project>\synthesis\alpus_riscv_cpu_example.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl4
+ideSYNTHESIS(<project>\synthesis\alpus_riscv_cpu_example.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl5
+ideSYNTHESIS(<project>\synthesis\alpus_riscv_cpu_example.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl6
+ideSYNTHESIS(<project>\synthesis\alpus_riscv_cpu_example.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+LIST Impl7
+ideSYNTHESIS(<project>\synthesis\alpus_riscv_cpu_example.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+LIST ExcludePackageForSimulation
+ENDLIST
+LIST ExcludePackageForSynthesis
+ENDLIST
+LIST IncludeModuleForSimulation
+ENDLIST
+LIST CDBOrder
+ENDLIST
+LIST UserCustomizedFileList
+ENDLIST
+LIST OpenedFileList
+ORIENTATION;HORIZONTAL
+Reports;Reports;0
+ReportsCurrentItem;Place and Route:alpus_riscv_cpu_example_glb_net_report.xml
+ACTIVEVIEW;Reports
+ENDLIST
+LIST ModuleSubBlockList
+LIST "alpus_riscv_cpu_example::work","Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_cpu_example.vhd","FALSE","FALSE"
+SUBBLOCK "alpus_riscv_cpu::work","Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_cpu.vhd","FALSE","FALSE"
+ENDLIST
+LIST "alpus_riscv_cpu_example_tb::work","Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_cpu_example_tb.vhd","FALSE","FALSE"
+SUBBLOCK "alpus_riscv_cpu_example::work","Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_cpu_example.vhd","FALSE","FALSE"
+ENDLIST
+LIST "alpus_riscv_cpu_pkg::work","Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_cpu.vhd","FALSE","FALSE"
+ENDLIST
+LIST "alpus_riscv_cpu_serv::work","Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_cpu.vhd","FALSE","FALSE"
+SUBBLOCK "serv_rf_top::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_rf_top.v","FALSE","FALSE"
+ENDLIST
+LIST "alpus_riscv_cpu_serv_pkg::work","Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_cpu.vhd","FALSE","FALSE"
+ENDLIST
+LIST "alpus_riscv_cpu_vex_pkg::work","Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_cpu.vhd","FALSE","FALSE"
+ENDLIST
+LIST "alpus_wb32_pkg::work","Z:\proj\alpus\alpus_riscv_cpu\alpus_wb32_pkg.vhd","FALSE","FALSE"
+ENDLIST
+LIST "config_pkg::work","Z:\proj\alpus\alpus_riscv_cpu\config_pkg_custom_cyclone_iii.vhd","FALSE","FALSE"
+ENDLIST
+LIST "alpus_riscv_cpu::work","Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_cpu.vhd","FALSE","FALSE"
+SUBBLOCK "alpus_riscv_cpu_serv::work","Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_cpu.vhd","FALSE","FALSE"
+SUBBLOCK "alpus_riscv_cpu_vex::work","Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_cpu.vhd","FALSE","FALSE"
+ENDLIST
+LIST "alpus_riscv_cpu_vex::work","Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_cpu.vhd","FALSE","FALSE"
+SUBBLOCK "VexRiscv::work","Z:\proj\alpus\alpus_riscv_cpu\vexriscv\VexRiscv_Plus.v","FALSE","FALSE"
+ENDLIST
+LIST "firmware_mem_pkg::work","Z:\proj\alpus\alpus_riscv_cpu\baremetal\firmware_mem_pkg.vhd","FALSE","FALSE"
+ENDLIST
+LIST "serv_aligner::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_aligner.v","FALSE","FALSE"
+ENDLIST
+LIST "serv_alu::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_alu.v","FALSE","FALSE"
+ENDLIST
+LIST "serv_bufreg::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_bufreg.v","FALSE","FALSE"
+ENDLIST
+LIST "serv_bufreg2::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_bufreg2.v","FALSE","FALSE"
+ENDLIST
+LIST "serv_compdec::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_compdec.v","FALSE","FALSE"
+ENDLIST
+LIST "serv_csr::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_csr.v","FALSE","FALSE"
+ENDLIST
+LIST "serv_ctrl::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_ctrl.v","FALSE","FALSE"
+ENDLIST
+LIST "serv_decode::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_decode.v","FALSE","FALSE"
+ENDLIST
+LIST "serv_immdec::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_immdec.v","FALSE","FALSE"
+ENDLIST
+LIST "serv_mem_if::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_mem_if.v","FALSE","FALSE"
+ENDLIST
+LIST "serv_rf_if::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_rf_if.v","FALSE","FALSE"
+ENDLIST
+LIST "serv_rf_ram::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_rf_ram.v","FALSE","FALSE"
+ENDLIST
+LIST "serv_rf_ram_if::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_rf_ram_if.v","FALSE","FALSE"
+ENDLIST
+LIST "serv_rf_top::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_rf_top.v","FALSE","FALSE"
+SUBBLOCK "serv_rf_ram_if::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_rf_ram_if.v","FALSE","FALSE"
+SUBBLOCK "serv_rf_ram::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_rf_ram.v","FALSE","FALSE"
+SUBBLOCK "serv_top::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_top.v","FALSE","FALSE"
+ENDLIST
+LIST "serv_state::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_state.v","FALSE","FALSE"
+ENDLIST
+LIST "serv_top::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_top.v","FALSE","FALSE"
+SUBBLOCK "serv_aligner::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_aligner.v","FALSE","FALSE"
+SUBBLOCK "serv_alu::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_alu.v","FALSE","FALSE"
+SUBBLOCK "serv_bufreg2::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_bufreg2.v","FALSE","FALSE"
+SUBBLOCK "serv_bufreg::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_bufreg.v","FALSE","FALSE"
+SUBBLOCK "serv_compdec::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_compdec.v","FALSE","FALSE"
+SUBBLOCK "serv_csr::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_csr.v","FALSE","FALSE"
+SUBBLOCK "serv_ctrl::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_ctrl.v","FALSE","FALSE"
+SUBBLOCK "serv_decode::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_decode.v","FALSE","FALSE"
+SUBBLOCK "serv_immdec::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_immdec.v","FALSE","FALSE"
+SUBBLOCK "serv_mem_if::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_mem_if.v","FALSE","FALSE"
+SUBBLOCK "serv_rf_if::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_rf_if.v","FALSE","FALSE"
+SUBBLOCK "serv_state::work","Z:\proj\alpus\alpus_riscv_cpu\serv\serv_state.v","FALSE","FALSE"
+ENDLIST
+LIST "StreamFifo::work","Z:\proj\alpus\alpus_riscv_cpu\vexriscv\VexRiscv_Plus.v","FALSE","FALSE"
+ENDLIST
+LIST "StreamFifoLowLatency::work","Z:\proj\alpus\alpus_riscv_cpu\vexriscv\VexRiscv_Plus.v","FALSE","FALSE"
+SUBBLOCK "StreamFifo::work","Z:\proj\alpus\alpus_riscv_cpu\vexriscv\VexRiscv_Plus.v","FALSE","FALSE"
+ENDLIST
+LIST "VexRiscv::work","Z:\proj\alpus\alpus_riscv_cpu\vexriscv\VexRiscv_Plus.v","FALSE","FALSE"
+SUBBLOCK "StreamFifoLowLatency::work","Z:\proj\alpus\alpus_riscv_cpu\vexriscv\VexRiscv_Plus.v","FALSE","FALSE"
+ENDLIST
+ENDLIST
+LIST ActiveTestBenchList
+ENDLIST
+LIST IOTabList
+ENDLIST
+LIST FPTabList
+ENDLIST
+LIST TimingTabList
+VALUE "constraint\user.sdc"
+VALUE "constraint\alpus_riscv_cpu.sdc"
+ENDLIST
+LIST FDCTabList
+ENDLIST

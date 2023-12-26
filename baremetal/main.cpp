@@ -7,7 +7,7 @@
 #define BLINK_IN_IRQ
 #define DO_BENCHMARK
 
-unsigned next_timer = 0x00000000;
+unsigned next_timer = 0x00000123; //Global variables are not initialized!
 int irq_counter=0;
 my_class _gTest;
 
@@ -20,13 +20,13 @@ void timer_callback(void)
 			*(volatile long int *)GPIO_ADDR &= ~0x00000001;
 		else
 			*(volatile long int *)GPIO_ADDR |= 0x00000001;
-		next_timer += 0x00400000;
+		next_timer += 50*TICKS_PER_MS;
 	} else {
 		*(volatile long int *)GPIO_ADDR |= 0x00000001;
-		next_timer += 0x04000000;
+		next_timer += 450*TICKS_PER_MS;
 	}
 #else
-	next_timer += 0x04400000;
+	next_timer += 1000*TICKS_PER_MS;
 #endif
 	
 	*(volatile long int *)TIMER_ADDR = next_timer;
@@ -41,7 +41,7 @@ void run_benchmark(void)
 	unsigned int timer0 = get_mtime();
 	int call_counter = alintstone();
 	unsigned int timer1 = get_mtime();
-	us += (timer1-timer0)/128 + (timer1-timer0)/4096; //approx div by 125MHz
+	us += ((uint64_t)(timer1-timer0)*(1000*65536/TICKS_PER_MS)) / 65536;
 	
 	print("Call counter: ");
 	print(hexstr(call_counter));
@@ -70,7 +70,7 @@ int main(void)
 {
 	// Blink once at boot
 	*(volatile long int *)GPIO_ADDR = 0x00000000;
-	timer_wait(100*TICKS_PER_MS);
+	timer_wait(500*TICKS_PER_MS);
 	*(volatile long int *)GPIO_ADDR = 0xffffffff;
 	timer_wait(2000*TICKS_PER_MS);
 
@@ -79,6 +79,7 @@ int main(void)
 	
 #ifdef INCLUDE_IRQ
 	// Initialize timer irq callback - irq vector is always pointing to static isr
+	next_timer = 0;
 	*(volatile long int *)TIMER_ADDR = next_timer;
 	set_direct_isr(&timer_callback);
 	enable_irq();

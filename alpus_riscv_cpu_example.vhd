@@ -1,4 +1,4 @@
--- alpus_riscv_cpu_example 
+-- alpus_riscv_cpu_example
 --
 -- Example design and a starting template for a new design with a riscv soft cpu.
 
@@ -7,6 +7,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 library work;
+use work.config_pkg.all;
 use work.firmware_mem_pkg.all;
 use work.alpus_wb32_pkg.all;
 use work.alpus_riscv_cpu_pkg.all;
@@ -25,8 +26,8 @@ architecture example of alpus_riscv_cpu_example is
 
 	--constant CPU_CHOICE : string := "SERV";
 	constant CPU_CHOICE : string := "VEX";
-	constant MEM_RTL_AREG : std_logic := '0'; -- tune these for successful inferring on different tools
-	constant MEM_RTL_AREGI : std_logic := '0';
+	constant MEM_RTL_AREG : std_logic := CONFIG_MEM_RTL_AREG; -- tune these for successful inferring on different tools
+	constant MEM_RTL_AREGI : std_logic := CONFIG_MEM_RTL_AREG;
 	signal wb_tos : alpus_wb32_tos_t;
 	signal wb_tom : alpus_wb32_tom_t;
 
@@ -71,6 +72,9 @@ begin
 			else
 				rst_i <= '0';
 			end if;
+			if HAS_RST = '1' and rst = RST_ACTIVE then
+				rst_ctr <= x"0";
+			end if;
 
 			-- example register bank with artificially long response times
 			-- timer and gpio are required by the baremetal example software
@@ -109,7 +113,7 @@ begin
 					acc_ctr <= acc_ctr + 1;
 				end if;
 			end if;
-			
+
 			--RiscV requires timer
 			mtime <= mtime + 1;
 			if mtime - mtimecmp > 0 then
@@ -119,15 +123,19 @@ begin
 			end if;
 
 			-- reg0 gpio
-			led <= reg0(0);
+			if LED_ACTIVE = '1' then
+				led <= reg0(0);
+			else
+				led <= not reg0(0);
+			end if;
 			txd <= reg0(1);
-			
+
 			if rst_i = '1' then
 				acc_ctr <= 0;
 				irq_timer <= '0';
 				mtime <= x"00000000";
 				mtimecmp <= x"00000000";
-				reg0 <= x"00000000";
+				reg0 <= x"00000002";
 			end if;
 		end if;
 	end process;
