@@ -62,6 +62,10 @@ void __startup(void)
 	*(volatile int *)(0x3000+0) = 0xc0000003;
 	b = *(volatile long int *)GPIO_ADDR;
 	a = *(volatile int *)(0x3000+0) ;
+	*(volatile long int *)GPIO_ADDR = 0x00000002;
+	*(volatile long int *)GPIO_ADDR = 0x00000003;
+	b = *(volatile long int *)GPIO_ADDR;
+	b = *(volatile long int *)GPIO_ADDR;
 #endif
 	
 #ifdef INCLUDE_STACK_CHECK

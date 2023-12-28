@@ -21,6 +21,7 @@ package alpus_wb32_pkg is
 	-- Wishbone signals to master direction
 	type alpus_wb32_tom_t is record
 		data  : std_logic_vector(31 downto 0);
+		stall : std_logic;
 		ack    : std_logic; -- bus cycle ack
 		--tgd    : std_logic;
 		--err    : std_logic; -- bus cycle nack
@@ -29,7 +30,7 @@ package alpus_wb32_pkg is
 	
 	-- Initial/idle values
 	constant alpus_wb32_tos_init : alpus_wb32_tos_t := ('0', '0', '0', (others => '0'), (others => '0'), (others => '0'));
-	constant alpus_wb32_tom_init : alpus_wb32_tom_t := ((others => '0'), '0');
+	constant alpus_wb32_tom_init : alpus_wb32_tom_t := ((others => '0'), '0', '0');
 
 
 end package;

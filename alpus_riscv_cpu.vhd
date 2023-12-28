@@ -293,18 +293,21 @@ begin
 						wb_tos_i.adr <= dbus_adr;
 						wb_tos_i.data <= dbus_dat;
 						wb_tos_i.we <= dbus_we;
-						wb_tos_i.cyc <= dbus_cyc and not wb_tom_i.ack;
-						wb_tos_i.stb <= dbus_cyc and not wb_tom_i.ack;
+						wb_tos_i.cyc <= '1';
+						wb_tos_i.stb <= '1';
 					end if;
 				end if;
 			else
 				dbus_ack_i <= wb_tom_i.ack;
-				wb_tos_i.we <= dbus_we;
-				wb_tos_i.cyc <= dbus_cyc and not wb_tom_i.ack;
-				wb_tos_i.stb <= dbus_cyc and not wb_tom_i.ack;
+				if wb_tom_i.stall = '0' then
+					wb_tos_i.stb <= '0';
+				end if;
 				if wb_tom_i.ack = '1' then
-					bus_rdata_r <= wb_tom_i.data;
-					bus_rvalid_r <= '1';
+					wb_tos_i.cyc <= '0';
+					if dbus_we = '0' then
+						bus_rdata_r <= wb_tom_i.data;
+						bus_rvalid_r <= '1';
+					end if;
 					periph_response <= '0';
 				end if;
 			end if;
@@ -593,24 +596,25 @@ begin
 					dBus_rsp_ready <= dBus_cmd_valid and not dBus_cmd_payload_wr;
 				else
 					if dBus_cmd_valid = '1' then
-						if dBus_cmd_payload_wr = '0' then
-							periph_response <= '1';
-						end if;
 						wb_tos_i.adr <= dBus_cmd_payload_address;
 						wb_tos_i.data <= dBus_cmd_payload_data;
 						wb_tos_i.we <= dBus_cmd_payload_wr;
-						wb_tos_i.cyc <= dBus_cmd_valid and not wb_tom_i.ack;
-						wb_tos_i.stb <= dBus_cmd_valid and not wb_tom_i.ack;
+						wb_tos_i.cyc <= '1';
+						wb_tos_i.stb <= '1';
+						periph_response <= '1';
 					end if;
 				end if;
 			else
-				dBus_rsp_ready <= wb_tom_i.ack;
-				wb_tos_i.we <= dBus_cmd_payload_wr;
-				wb_tos_i.cyc <= dBus_cmd_valid and not wb_tom_i.ack;
-				wb_tos_i.stb <= dBus_cmd_valid and not wb_tom_i.ack;
+				if wb_tom_i.stall = '0' then
+					wb_tos_i.stb <= '0';
+				end if;
 				if wb_tom_i.ack = '1' then
-					bus_rdata_r <= wb_tom_i.data;
-					bus_rvalid_r <= '1';
+					wb_tos_i.cyc <= '0';
+					if dBus_cmd_payload_wr = '0' then
+						dBus_rsp_ready <= wb_tom_i.ack;
+						bus_rdata_r <= wb_tom_i.data;
+						bus_rvalid_r <= '1';
+					end if;
 					periph_response <= '0';
 				end if;
 			end if;

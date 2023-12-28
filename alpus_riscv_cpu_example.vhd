@@ -79,6 +79,7 @@ begin
 			-- example register bank with artificially long response times
 			-- timer and gpio are required by the baremetal example software
 			wb_tom.ack <= '0';
+			wb_tom.stall <= '1';
 			acc_ctr <= 0;
 			if wb_tos.cyc = '1' and wb_tos.stb = '1' and wb_tos.we = '1' then
 				case wb_tos.adr(9 downto 2) is
@@ -90,11 +91,13 @@ begin
 					null;
 				end case;
 				if acc_ctr = 7 then
-					wb_tom.ack <= '1';
+					wb_tom.stall <= '0';
+					--wb_tom.ack <= '1'; --quick ack
 					acc_ctr <= 0;
 				else
 					acc_ctr <= acc_ctr + 1;
 				end if;
+				wb_tom.ack <= not wb_tom.stall;
 			end if;
 			if wb_tos.cyc = '1' and wb_tos.stb = '1' and wb_tos.we = '0' then
 				case wb_tos.adr(9 downto 2) is
@@ -107,11 +110,13 @@ begin
 					null;
 				end case;
 				if acc_ctr = 5 then
-					wb_tom.ack <= '1';
+					wb_tom.stall <= '0';
+					--wb_tom.ack <= '1'; --quick ack
 					acc_ctr <= 0;
 				else
 					acc_ctr <= acc_ctr + 1;
 				end if;
+				wb_tom.ack <= not wb_tom.stall;
 			end if;
 
 			--RiscV requires timer
