@@ -10,21 +10,23 @@
             <top_module name="alpus_riscv_cpu_serv_pkg" />
             <top_module name="alpus_riscv_cpu_vex_pkg" />
             <top_module name="alpus_wb32_pkg" />
+            <top_module name="alpus_wb_gpio_pkg" />
+            <top_module name="config_pkg" />
             <top_module name="firmware_mem_pkg" />
             <top_module name="glbl" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="4.822 ns"></ZoomStartTime>
-      <ZoomEndTime time="323.091 ns"></ZoomEndTime>
-      <Cursor1Time time="35.000 ns"></Cursor1Time>
+      <ZoomStartTime time="10,120.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="12,100.001 ns"></ZoomEndTime>
+      <Cursor1Time time="1,000,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="325"></NameColumnWidth>
+      <NameColumnWidth column_width="289"></NameColumnWidth>
       <ValueColumnWidth column_width="90"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="19" />
+   <WVObjectSize size="43" />
    <wvobject fp_name="/alpus_riscv_cpu_example_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -36,6 +38,16 @@
    <wvobject fp_name="/alpus_riscv_cpu_example_tb/CLK_PERIOD" type="other">
       <obj_property name="ElementShortName">CLK_PERIOD</obj_property>
       <obj_property name="ObjectShortName">CLK_PERIOD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/wb_tos" type="array">
+      <obj_property name="ElementShortName">wb_tos</obj_property>
+      <obj_property name="ObjectShortName">wb_tos</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/wb_tom" type="array">
+      <obj_property name="ElementShortName">wb_tom</obj_property>
+      <obj_property name="ObjectShortName">wb_tom</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/cpu/vex/i/iBus_cmd_valid" type="logic">
       <obj_property name="ElementShortName">iBus_cmd_valid</obj_property>
@@ -61,9 +73,17 @@
       <obj_property name="ElementShortName">iBus_rsp_payload_inst[31:0]</obj_property>
       <obj_property name="ObjectShortName">iBus_rsp_payload_inst[31:0]</obj_property>
    </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/cpu/vex/i/iBus_rsp_payload_inst_i" type="array">
+      <obj_property name="ElementShortName">iBus_rsp_payload_inst_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">iBus_rsp_payload_inst_i[31:0]</obj_property>
+   </wvobject>
    <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/cpu/vex/i/dBus_cmd_valid" type="logic">
       <obj_property name="ElementShortName">dBus_cmd_valid</obj_property>
       <obj_property name="ObjectShortName">dBus_cmd_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/cpu/vex/i/dBus_cmd_valid_i" type="logic">
+      <obj_property name="ElementShortName">dBus_cmd_valid_i</obj_property>
+      <obj_property name="ObjectShortName">dBus_cmd_valid_i</obj_property>
    </wvobject>
    <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/cpu/vex/i/dBus_cmd_ready" type="logic">
       <obj_property name="ElementShortName">dBus_cmd_ready</obj_property>
@@ -93,12 +113,96 @@
       <obj_property name="ElementShortName">dBus_rsp_ready</obj_property>
       <obj_property name="ObjectShortName">dBus_rsp_ready</obj_property>
    </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/cpu/vex/i/dBus_rsp_data_i0" type="array">
+      <obj_property name="ElementShortName">dBus_rsp_data_i0[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dBus_rsp_data_i0[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/cpu/vex/i/dBus_rsp_data_i1" type="array">
+      <obj_property name="ElementShortName">dBus_rsp_data_i1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dBus_rsp_data_i1[31:0]</obj_property>
+   </wvobject>
    <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/cpu/vex/i/dBus_rsp_data" type="array">
       <obj_property name="ElementShortName">dBus_rsp_data[31:0]</obj_property>
       <obj_property name="ObjectShortName">dBus_rsp_data[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/cpu/vex/i/vex/reset" type="logic">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/io/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/io/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/io/wb_tos" type="array">
+      <obj_property name="ElementShortName">wb_tos</obj_property>
+      <obj_property name="ObjectShortName">wb_tos</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/io/wb_tom" type="array">
+      <obj_property name="ElementShortName">wb_tom</obj_property>
+      <obj_property name="ObjectShortName">wb_tom</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/io/gpio" type="array">
+      <obj_property name="ElementShortName">gpio[1:0]</obj_property>
+      <obj_property name="ObjectShortName">gpio[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/io/irq" type="logic">
+      <obj_property name="ElementShortName">irq</obj_property>
+      <obj_property name="ObjectShortName">irq</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/io/addr" type="array">
+      <obj_property name="ElementShortName">addr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/io/reg_gpio_out" type="array">
+      <obj_property name="ElementShortName">reg_gpio_out[1:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_gpio_out[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/io/reg_gpio_oen" type="array">
+      <obj_property name="ElementShortName">reg_gpio_oen[1:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_gpio_oen[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/io/reg_irq_en" type="array">
+      <obj_property name="ElementShortName">reg_irq_en[1:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_irq_en[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/io/reg_irq_flag" type="array">
+      <obj_property name="ElementShortName">reg_irq_flag[1:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_irq_flag[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/io/acc_ctr" type="other">
+      <obj_property name="ElementShortName">acc_ctr</obj_property>
+      <obj_property name="ObjectShortName">acc_ctr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/io/gpio_r" type="array">
+      <obj_property name="ElementShortName">gpio_r[1:0]</obj_property>
+      <obj_property name="ObjectShortName">gpio_r[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/io/gpio_rr" type="array">
+      <obj_property name="ElementShortName">gpio_rr[1:0]</obj_property>
+      <obj_property name="ObjectShortName">gpio_rr[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/io/gpio_rrr" type="array">
+      <obj_property name="ElementShortName">gpio_rrr[1:0]</obj_property>
+      <obj_property name="ObjectShortName">gpio_rrr[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/wb_gpio_tos" type="array">
+      <obj_property name="ElementShortName">wb_gpio_tos</obj_property>
+      <obj_property name="ObjectShortName">wb_gpio_tos</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/wb_gpio_tom" type="array">
+      <obj_property name="ElementShortName">wb_gpio_tom</obj_property>
+      <obj_property name="ObjectShortName">wb_gpio_tom</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/wb_timer_tos" type="array">
+      <obj_property name="ElementShortName">wb_timer_tos</obj_property>
+      <obj_property name="ObjectShortName">wb_timer_tos</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/wb_timer_tom" type="array">
+      <obj_property name="ElementShortName">wb_timer_tom</obj_property>
+      <obj_property name="ObjectShortName">wb_timer_tom</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>

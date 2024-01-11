@@ -69,6 +69,9 @@
         <Source name="../config_pkg_custom_cyclone_iii.vhd" type="VHDL" type_short="VHDL">
             <Options/>
         </Source>
+        <Source name="../alpus_wb_gpio.vhd" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
         <Source name="alpus_riscv_cpu.pdc" type="Physical Constraints File" type_short="PDC">
             <Options/>
         </Source>

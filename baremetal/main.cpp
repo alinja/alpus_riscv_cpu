@@ -11,18 +11,36 @@ unsigned next_timer = 0x00000123; //Global variables are not initialized!
 int irq_counter=0;
 my_class _gTest;
 
+int led_invert;
+
+static void inline led_set()
+{
+	if(led_invert)
+		*(volatile long int *)(GPIO2_ADDR+8) = 0x00000001; //clear
+	else
+		*(volatile long int *)(GPIO2_ADDR+4) = 0x00000001; //set
+}
+
+static void inline led_clr()
+{
+	if(led_invert)
+		*(volatile long int *)(GPIO2_ADDR+4) = 0x00000001; //set
+	else
+		*(volatile long int *)(GPIO2_ADDR+8) = 0x00000001; //clear
+}
+
 void timer_callback(void)
 {
 #ifdef BLINK_IN_IRQ
 	if(irq_counter&0x01) {
 		// blink if magic number from constructor matches
 		if(_gTest.get_val() == 0x11223344)
-			*(volatile long int *)GPIO_ADDR &= ~0x00000001;
+			led_set();
 		else
-			*(volatile long int *)GPIO_ADDR |= 0x00000001;
+			led_clr();
 		next_timer += 50*TICKS_PER_MS;
 	} else {
-		*(volatile long int *)GPIO_ADDR |= 0x00000001;
+		led_clr();
 		next_timer += 450*TICKS_PER_MS;
 	}
 #else
@@ -69,9 +87,11 @@ void run_stack_check(void)
 int main(void)
 {
 	// Blink once at boot
-	*(volatile long int *)GPIO_ADDR = 0x00000000;
+	led_invert = *(volatile long int *)GPIO_ADDR >> 31; // read board setting
+	*(volatile long int *)(GPIO2_ADDR+16) |= 0x00000001; //oen/dir
+	led_set();
 	timer_wait(500*TICKS_PER_MS);
-	*(volatile long int *)GPIO_ADDR = 0xffffffff;
+	led_clr();
 	timer_wait(2000*TICKS_PER_MS);
 
 	run_stack_check();
@@ -89,9 +109,9 @@ int main(void)
 	while(1) {
 		// blink led
 #ifndef BLINK_IN_IRQ
-		*(volatile long int *)GPIO_ADDR &= ~0x00000001;
+		led_set();
 		timer_wait(100*TICKS_PER_MS);
-		*(volatile long int *)GPIO_ADDR |= 0x00000001;
+		led_clr();
 		timer_wait(1900*TICKS_PER_MS);
 #endif
 

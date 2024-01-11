@@ -53,7 +53,8 @@ VALUE="Impl4",NUM=4
 VALUE="Impl5",NUM=5
 VALUE="Impl6",NUM=6
 VALUE="Impl7",NUM=7
-CURREV=7
+VALUE="Impl8",NUM=8
+CURREV=8
 ENDLIST
 LIST GlobalIncludeFileList
 ENDLIST
@@ -65,52 +66,57 @@ SIZE="78"
 ENDFILE
 VALUE "<project>\synthesis\alpus_riscv_cpu_example.so,so"
 STATE="utd"
-TIME="1702632037"
+TIME="1703616033"
 SIZE="273"
 ENDFILE
 VALUE "<project>\synthesis\alpus_riscv_cpu_example.vm,syn_vm"
 STATE="utd"
-TIME="1702632036"
-SIZE="257783"
+TIME="1703616033"
+SIZE="694105"
 ENDFILE
 VALUE "<project>\synthesis\alpus_riscv_cpu_example_syn.prj,prj"
 STATE="utd"
-TIME="1702632037"
-SIZE="4078"
+TIME="1703616034"
+SIZE="4170"
 ENDFILE
 VALUE "<project>\synthesis\alpus_riscv_cpu_example_vm.sdc,syn_sdc"
 STATE="utd"
-TIME="1702632036"
+TIME="1703616033"
 SIZE="891"
 ENDFILE
 VALUE "Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_cpu.vhd,hdl"
 STATE="utd"
-TIME="1703613332"
-SIZE="22175"
+TIME="1703785574"
+SIZE="22012"
 ENDFILE
 VALUE "Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_cpu_example.vhd,hdl"
 STATE="utd"
-TIME="1703612964"
-SIZE="3370"
+TIME="1704747384"
+SIZE="4853"
 ENDFILE
 VALUE "Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_cpu_example_tb.vhd,hdl"
 STATE="utd"
-TIME="1702410266"
-SIZE="673"
+TIME="1704529745"
+SIZE="677"
 ENDFILE
 VALUE "Z:\proj\alpus\alpus_riscv_cpu\alpus_wb32_pkg.vhd,hdl"
 STATE="utd"
-TIME="1702410266"
-SIZE="1198"
+TIME="1704529402"
+SIZE="2421"
+ENDFILE
+VALUE "Z:\proj\alpus\alpus_riscv_cpu\alpus_wb_gpio.vhd,hdl"
+STATE="utd"
+TIME="1703837365"
+SIZE="5127"
 ENDFILE
 VALUE "Z:\proj\alpus\alpus_riscv_cpu\baremetal\firmware_mem_pkg.vhd,hdl"
 STATE="utd"
-TIME="1703614681"
+TIME="1705003388"
 SIZE="85307"
 ENDFILE
 VALUE "Z:\proj\alpus\alpus_riscv_cpu\config_pkg_custom_cyclone_iii.vhd,hdl"
 STATE="utd"
-TIME="1703612545"
+TIME="1703832260"
 SIZE="328"
 ENDFILE
 VALUE "Z:\proj\alpus\alpus_riscv_cpu\serv\serv_aligner.v,hdl"
@@ -300,6 +306,16 @@ ENDLIST
 Used_File_List
 ENDUsed_File_List
 ENDLIST
+LIST Impl8
+ideSYNTHESIS(<project>\synthesis\alpus_riscv_cpu_example.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
 ENDLIST
 ENDLIST
 ENDLIST
@@ -471,6 +487,16 @@ ENDLIST
 Used_File_List
 ENDUsed_File_List
 ENDLIST
+LIST Impl8
+ideSYNTHESIS(<project>\synthesis\alpus_riscv_cpu_example.vm,syn_vm)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
 ENDLIST
 ENDLIST
 LIST ExcludePackageForSimulation
@@ -487,11 +513,13 @@ LIST OpenedFileList
 ORIENTATION;HORIZONTAL
 Reports;Reports;0
 ReportsCurrentItem;Place and Route:alpus_riscv_cpu_example_glb_net_report.xml
+StartPage;StartPage;0
 ACTIVEVIEW;Reports
 ENDLIST
 LIST ModuleSubBlockList
 LIST "alpus_riscv_cpu_example::work","Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_cpu_example.vhd","FALSE","FALSE"
 SUBBLOCK "alpus_riscv_cpu::work","Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_cpu.vhd","FALSE","FALSE"
+SUBBLOCK "alpus_wb_gpio::work","Z:\proj\alpus\alpus_riscv_cpu\alpus_wb_gpio.vhd","FALSE","FALSE"
 ENDLIST
 LIST "alpus_riscv_cpu_example_tb::work","Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_cpu_example_tb.vhd","FALSE","FALSE"
 SUBBLOCK "alpus_riscv_cpu_example::work","Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_cpu_example.vhd","FALSE","FALSE"
@@ -507,6 +535,8 @@ LIST "alpus_riscv_cpu_vex_pkg::work","Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_
 ENDLIST
 LIST "alpus_wb32_pkg::work","Z:\proj\alpus\alpus_riscv_cpu\alpus_wb32_pkg.vhd","FALSE","FALSE"
 ENDLIST
+LIST "alpus_wb_gpio_pkg::work","Z:\proj\alpus\alpus_riscv_cpu\alpus_wb_gpio.vhd","FALSE","FALSE"
+ENDLIST
 LIST "config_pkg::work","Z:\proj\alpus\alpus_riscv_cpu\config_pkg_custom_cyclone_iii.vhd","FALSE","FALSE"
 ENDLIST
 LIST "alpus_riscv_cpu::work","Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_cpu.vhd","FALSE","FALSE"
@@ -515,6 +545,8 @@ SUBBLOCK "alpus_riscv_cpu_vex::work","Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_
 ENDLIST
 LIST "alpus_riscv_cpu_vex::work","Z:\proj\alpus\alpus_riscv_cpu\alpus_riscv_cpu.vhd","FALSE","FALSE"
 SUBBLOCK "VexRiscv::work","Z:\proj\alpus\alpus_riscv_cpu\vexriscv\VexRiscv_Plus.v","FALSE","FALSE"
+ENDLIST
+LIST "alpus_wb_gpio::work","Z:\proj\alpus\alpus_riscv_cpu\alpus_wb_gpio.vhd","FALSE","FALSE"
 ENDLIST
 LIST "firmware_mem_pkg::work","Z:\proj\alpus\alpus_riscv_cpu\baremetal\firmware_mem_pkg.vhd","FALSE","FALSE"
 ENDLIST

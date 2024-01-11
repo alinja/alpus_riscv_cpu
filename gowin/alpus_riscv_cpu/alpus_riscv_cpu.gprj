@@ -25,6 +25,7 @@
         <File path="Z:/proj/alpus/alpus_riscv_cpu/alpus_riscv_cpu.vhd" type="file.vhdl" enable="1"/>
         <File path="Z:/proj/alpus/alpus_riscv_cpu/alpus_riscv_cpu_example.vhd" type="file.vhdl" enable="1"/>
         <File path="Z:/proj/alpus/alpus_riscv_cpu/alpus_wb32_pkg.vhd" type="file.vhdl" enable="1"/>
+        <File path="Z:/proj/alpus/alpus_riscv_cpu/alpus_wb_gpio.vhd" type="file.vhdl" enable="1"/>
         <File path="Z:/proj/alpus/alpus_riscv_cpu/baremetal/firmware_mem_pkg.vhd" type="file.vhdl" enable="1"/>
         <File path="Z:/proj/alpus/alpus_riscv_cpu/config_pkg_tang_nano_9k.vhd" type="file.vhdl" enable="1"/>
         <File path="src/alpus_riscv_cpu.cst" type="file.cst" enable="1"/>

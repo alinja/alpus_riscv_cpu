@@ -11,14 +11,15 @@ use work.config_pkg.all;
 use work.firmware_mem_pkg.all;
 use work.alpus_wb32_pkg.all;
 use work.alpus_riscv_cpu_pkg.all;
+use work.alpus_wb_gpio_pkg.all;
 
 entity alpus_riscv_cpu_example is
 port(
 	clk : in std_logic;
 	rst : in std_logic;
 
-	txd      : out std_logic;
-	led      : out std_logic
+	txd      : inout std_logic;
+	led      : inout std_logic
 );
 end entity alpus_riscv_cpu_example;
 
@@ -31,7 +32,22 @@ architecture example of alpus_riscv_cpu_example is
 	signal wb_tos : alpus_wb32_tos_t;
 	signal wb_tom : alpus_wb32_tom_t;
 
+	signal wb_gpio_tos : alpus_wb32_tos_t;
+	signal wb_gpio_tom : alpus_wb32_tom_t;
+	signal wb_timer_tos : alpus_wb32_tos_t := alpus_wb32_tos_init;
+	signal wb_timer_tom : alpus_wb32_tom_t := alpus_wb32_tom_init;
+	attribute mark_debug : string;
+	attribute mark_debug of wb_tos   : signal is "true";
+	attribute mark_debug of wb_tom   : signal is "true";
+	attribute mark_debug of wb_gpio_tos   : signal is "true";
+	attribute mark_debug of wb_gpio_tom   : signal is "true";
+	attribute mark_debug of wb_timer_tos   : signal is "true";
+	attribute mark_debug of wb_timer_tom   : signal is "true";
+
 	signal irq_timer : std_logic;
+	signal irq_external : std_logic;
+
+	signal gpio : std_logic_vector(1 downto 0);
 
 	signal mtime : signed(31 downto 0);
 	signal mtimecmp : signed(31 downto 0);
@@ -62,6 +78,26 @@ begin
 		irq_timer => irq_timer
 	);
 
+	-- wishbone slave address map
+	wb_timer_tos <= alpus_wb32_slave_select_tos(x"80000000", x"f0000000", wb_tos);
+	wb_gpio_tos <= alpus_wb32_slave_select_tos(x"c0000000", x"f0000000", wb_tos);
+	wb_tom  <= alpus_wb32_slave_select_tom(x"80000000", x"f0000000", wb_tos, wb_timer_tom, wb_gpio_tom);
+
+	io : alpus_wb_gpio generic map (
+		PINS => 2,
+		NO_INPUT => '0'
+	) port map (
+		clk => clk,
+		rst => rst_i,
+		wb_tos => wb_gpio_tos,
+		wb_tom => wb_gpio_tom,
+		gpio => gpio,
+		irq => irq_external
+	);
+
+	led <= gpio(0);
+	txd <= gpio(1);
+
 	process(clk)
 	begin
 		if rising_edge(clk) then
@@ -78,46 +114,47 @@ begin
 
 			-- example register bank with artificially long response times
 			-- timer and gpio are required by the baremetal example software
-			wb_tom.ack <= '0';
-			wb_tom.stall <= '1';
+			wb_timer_tom.ack <= '0';
+			wb_timer_tom.stall <= '1';
 			acc_ctr <= 0;
-			if wb_tos.cyc = '1' and wb_tos.stb = '1' and wb_tos.we = '1' then
-				case wb_tos.adr(9 downto 2) is
+			if wb_timer_tos.cyc = '1' and wb_timer_tos.stb = '1' and wb_timer_tos.we = '1' then
+				case wb_timer_tos.adr(9 downto 2) is
 				when x"00" =>
-					reg0 <= wb_tos.data;
+					reg0 <= wb_timer_tos.data;
 				when x"01" =>
-					mtimecmp <= signed(wb_tos.data);
+					mtimecmp <= signed(wb_timer_tos.data);
 				when others =>
 					null;
 				end case;
 				if acc_ctr = 7 then
-					wb_tom.stall <= '0';
-					--wb_tom.ack <= '1'; --quick ack
+					wb_timer_tom.stall <= '0';
+					--wb_timer_tom.ack <= '1'; --quick ack
 					acc_ctr <= 0;
 				else
 					acc_ctr <= acc_ctr + 1;
 				end if;
-				wb_tom.ack <= not wb_tom.stall;
+				wb_timer_tom.ack <= not wb_timer_tom.stall;
 			end if;
-			if wb_tos.cyc = '1' and wb_tos.stb = '1' and wb_tos.we = '0' then
-				case wb_tos.adr(9 downto 2) is
+			if wb_timer_tos.cyc = '1' and wb_timer_tos.stb = '1' and wb_timer_tos.we = '0' then
+				case wb_timer_tos.adr(9 downto 2) is
 				when x"00" =>
-					wb_tom.data <= reg0;
+					wb_timer_tom.data <= reg0;
 				when x"01" =>
-					wb_tom.data <= std_logic_vector(mtime);
+					wb_timer_tom.data <= std_logic_vector(mtime);
 				when others =>
-					wb_tom.data <= x"00000000";
+					wb_timer_tom.data <= x"00000000";
 					null;
 				end case;
 				if acc_ctr = 5 then
-					wb_tom.stall <= '0';
-					--wb_tom.ack <= '1'; --quick ack
+					wb_timer_tom.stall <= '0';
+					--wb_timer_tom.ack <= '1'; --quick ack
 					acc_ctr <= 0;
 				else
 					acc_ctr <= acc_ctr + 1;
 				end if;
-				wb_tom.ack <= not wb_tom.stall;
+				wb_timer_tom.ack <= not wb_timer_tom.stall;
 			end if;
+			reg0(31) <= not LED_ACTIVE; -- bit31 tells sw to invert led
 
 			--RiscV requires timer
 			mtime <= mtime + 1;
@@ -126,14 +163,6 @@ begin
 			else
 				irq_timer <= '0';
 			end if;
-
-			-- reg0 gpio
-			if LED_ACTIVE = '1' then
-				led <= reg0(0);
-			else
-				led <= not reg0(0);
-			end if;
-			txd <= reg0(1);
 
 			if rst_i = '1' then
 				acc_ctr <= 0;

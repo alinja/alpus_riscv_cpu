@@ -62,10 +62,10 @@ void __startup(void)
 	*(volatile int *)(0x3000+0) = 0xc0000003;
 	b = *(volatile long int *)GPIO_ADDR;
 	a = *(volatile int *)(0x3000+0) ;
-	*(volatile long int *)GPIO_ADDR = 0x00000002;
-	*(volatile long int *)GPIO_ADDR = 0x00000003;
-	b = *(volatile long int *)GPIO_ADDR;
-	b = *(volatile long int *)GPIO_ADDR;
+	*(volatile long int *)GPIO2_ADDR = 0x00000002;
+	*(volatile long int *)GPIO2_ADDR = 0x00000003;
+	b = *(volatile long int *)GPIO2_ADDR;
+	b = *(volatile long int *)GPIO2_ADDR;
 #endif
 	
 #ifdef INCLUDE_STACK_CHECK
@@ -156,17 +156,17 @@ void timer_wait_for_mtime(long int mtime)
 
 static void __bitbang_uart_tx_setbit(int bit)
 {
-	//not irq-safe!!
 	if(bit)
-		*(volatile long int *)GPIO_ADDR |= 0x00000002;
+		*(volatile long int *)(GPIO2_ADDR+4) = 0x00000002; //set
 	else
-		*(volatile long int *)GPIO_ADDR &= ~0x00000002;
+		*(volatile long int *)(GPIO2_ADDR+8) = 0x00000002; //clear
 }
 
 //9600 baud for debugging
 void bitbang_uart_tx(char c)
 {
 	int bitdelay = TICKS_PER_MS*1000/9600;
+	*(volatile long int *)(GPIO2_ADDR+16) |= 0x00000002; //oen/dir
 
 	long int mtime0 = get_mtime();
 

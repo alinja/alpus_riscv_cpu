@@ -32,9 +32,56 @@ package alpus_wb32_pkg is
 	constant alpus_wb32_tos_init : alpus_wb32_tos_t := ('0', '0', '0', (others => '0'), (others => '0'), (others => '0'));
 	constant alpus_wb32_tom_init : alpus_wb32_tom_t := ((others => '0'), '0', '0');
 
+	-- Select slave by address and mask
+	function alpus_wb32_slave_select_tos(
+		adr  : std_logic_vector(31 downto 0);
+		mask : std_logic_vector(31 downto 0);
+		m : alpus_wb32_tos_t
+	) return alpus_wb32_tos_t;
+
+	function alpus_wb32_slave_select_tom(
+		adr  : std_logic_vector(31 downto 0); --addr for a
+		mask : std_logic_vector(31 downto 0);
+		m : alpus_wb32_tos_t;
+		a : alpus_wb32_tom_t;
+		b : alpus_wb32_tom_t
+	) return alpus_wb32_tom_t;
 
 end package;
 
 package body alpus_wb32_pkg is
+
+	function alpus_wb32_slave_select_tos(
+		adr  : std_logic_vector(31 downto 0);
+		mask : std_logic_vector(31 downto 0);
+		m : alpus_wb32_tos_t
+	) return alpus_wb32_tos_t is
+		variable RET : alpus_wb32_tos_t;
+	begin
+		if (adr and mask) = (m.adr and mask) then
+			return m;
+		else
+			RET := m;
+			RET.cyc := '0';
+			RET.we := '0'; --not needed but prettier in simulation
+			RET.stb := '0';
+			return RET;
+		end if;
+	end function;
+
+	function alpus_wb32_slave_select_tom(
+		adr  : std_logic_vector(31 downto 0);
+		mask : std_logic_vector(31 downto 0);
+		m : alpus_wb32_tos_t;
+		a : alpus_wb32_tom_t;
+		b : alpus_wb32_tom_t
+	) return alpus_wb32_tom_t is
+	begin
+		if (adr and mask) = (m.adr and mask) then
+			return a;
+		else
+			return b;
+		end if;
+	end function;
 
 end;

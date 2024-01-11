@@ -8,6 +8,7 @@
 
 //VexRiscV ex
 #define GPIO_ADDR  0x80000000
+#define GPIO2_ADDR 0xc0000000
 #define TIMER_ADDR 0x80000004
 
 //A custom Cyclone 3 board

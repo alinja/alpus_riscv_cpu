@@ -13,8 +13,8 @@ architecture tb of alpus_riscv_cpu_example_tb is
 		clk : in std_logic;
 		rst : in std_logic;
 
-		txd      : out std_logic;
-		led      : out std_logic
+		txd      : inout std_logic;
+		led      : inout std_logic
 	);
 	end component;
 
