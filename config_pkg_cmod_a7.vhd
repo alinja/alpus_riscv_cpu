@@ -8,6 +8,11 @@ package config_pkg is
 	constant RST_ACTIVE : std_logic := '1';
 	constant LED_ACTIVE : std_logic := '1';
 	constant CONFIG_MEM_RTL_AREG : std_logic := '0';
+	constant PLL_ARCH : string := "X7MMCM";
+	constant PLL_FREQ_MHZ : real := 12.0;
+	constant PLL_IN_DIV : integer := 1;
+	constant PLL_IN_MUL : integer := 50;
+	constant PLL_OUT0_DIV : integer := 4; -- 150 MHz
 end package;
 
 package body config_pkg is

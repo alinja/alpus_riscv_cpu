@@ -5,6 +5,8 @@
    <db_ref_list>
       <db_ref path="alpus_riscv_cpu_example_tb_behav.wdb" id="1">
          <top_modules>
+            <top_module name="alpus_pll_pkg" />
+            <top_module name="alpus_resetsync_pkg" />
             <top_module name="alpus_riscv_cpu_example_tb" />
             <top_module name="alpus_riscv_cpu_pkg" />
             <top_module name="alpus_riscv_cpu_serv_pkg" />
@@ -18,15 +20,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="10,120.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="12,100.001 ns"></ZoomEndTime>
-      <Cursor1Time time="1,000,000.000 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="11.260001 us"></ZoomEndTime>
+      <Cursor1Time time="0.685000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="289"></NameColumnWidth>
+      <NameColumnWidth column_width="360"></NameColumnWidth>
       <ValueColumnWidth column_width="90"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="43" />
+   <WVObjectSize size="69" />
    <wvobject fp_name="/alpus_riscv_cpu_example_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -204,5 +206,112 @@
       <obj_property name="ElementShortName">wb_timer_tom</obj_property>
       <obj_property name="ObjectShortName">wb_timer_tom</obj_property>
       <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/pll/in_clk" type="logic">
+      <obj_property name="ElementShortName">in_clk</obj_property>
+      <obj_property name="ObjectShortName">in_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/pll/in_rst" type="logic">
+      <obj_property name="ElementShortName">in_rst</obj_property>
+      <obj_property name="ObjectShortName">in_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/pll/out_clk0" type="logic">
+      <obj_property name="ElementShortName">out_clk0</obj_property>
+      <obj_property name="ObjectShortName">out_clk0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/pll/out_clk1" type="logic">
+      <obj_property name="ElementShortName">out_clk1</obj_property>
+      <obj_property name="ObjectShortName">out_clk1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/pll/out_clk2" type="logic">
+      <obj_property name="ElementShortName">out_clk2</obj_property>
+      <obj_property name="ObjectShortName">out_clk2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/pll/out_clk3" type="logic">
+      <obj_property name="ElementShortName">out_clk3</obj_property>
+      <obj_property name="ObjectShortName">out_clk3</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/pll/out_locked" type="logic">
+      <obj_property name="ElementShortName">out_locked</obj_property>
+      <obj_property name="ObjectShortName">out_locked</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/pll/OUT0_DIV" type="other">
+      <obj_property name="ElementShortName">OUT0_DIV</obj_property>
+      <obj_property name="ObjectShortName">OUT0_DIV</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/pll/OUT1_DIV" type="other">
+      <obj_property name="ElementShortName">OUT1_DIV</obj_property>
+      <obj_property name="ObjectShortName">OUT1_DIV</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/pll/OUT2_DIV" type="other">
+      <obj_property name="ElementShortName">OUT2_DIV</obj_property>
+      <obj_property name="ObjectShortName">OUT2_DIV</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/pll/OUT3_DIV" type="other">
+      <obj_property name="ElementShortName">OUT3_DIV</obj_property>
+      <obj_property name="ObjectShortName">OUT3_DIV</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/pll/IN_MUL" type="other">
+      <obj_property name="ElementShortName">IN_MUL</obj_property>
+      <obj_property name="ObjectShortName">IN_MUL</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/rstsync/slow_clk" type="logic">
+      <obj_property name="ElementShortName">slow_clk</obj_property>
+      <obj_property name="ObjectShortName">slow_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/rstsync/arst" type="logic">
+      <obj_property name="ElementShortName">arst</obj_property>
+      <obj_property name="ObjectShortName">arst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/rstsync/locked" type="logic">
+      <obj_property name="ElementShortName">locked</obj_property>
+      <obj_property name="ObjectShortName">locked</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/rstsync/clk" type="array">
+      <obj_property name="ElementShortName">clk[0:0]</obj_property>
+      <obj_property name="ObjectShortName">clk[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/rstsync/rst" type="array">
+      <obj_property name="ElementShortName">rst[0:0]</obj_property>
+      <obj_property name="ObjectShortName">rst[0:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/rstsync/arst_combined" type="logic">
+      <obj_property name="ElementShortName">arst_combined</obj_property>
+      <obj_property name="ObjectShortName">arst_combined</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/rstsync/rst_ctr" type="array">
+      <obj_property name="ElementShortName">rst_ctr[3:0]</obj_property>
+      <obj_property name="ObjectShortName">rst_ctr[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/rstsync/rst_i" type="logic">
+      <obj_property name="ElementShortName">rst_i</obj_property>
+      <obj_property name="ObjectShortName">rst_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/rstsync/rst_sample" type="array">
+      <obj_property name="ElementShortName">rst_sample[0:0]</obj_property>
+      <obj_property name="ObjectShortName">rst_sample[0:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/rstsync/rst_sample_meta" type="array">
+      <obj_property name="ElementShortName">rst_sample_meta[0:0]</obj_property>
+      <obj_property name="ObjectShortName">rst_sample_meta[0:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/rstsync/NUM_CLOCKS" type="other">
+      <obj_property name="ElementShortName">NUM_CLOCKS</obj_property>
+      <obj_property name="ObjectShortName">NUM_CLOCKS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/rstsync/ARST_ACTIVE" type="logic">
+      <obj_property name="ElementShortName">ARST_ACTIVE</obj_property>
+      <obj_property name="ObjectShortName">ARST_ACTIVE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/alpus_riscv_cpu_example_tb/dut/rstsync/RST_COUNTER_WID" type="other">
+      <obj_property name="ElementShortName">RST_COUNTER_WID</obj_property>
+      <obj_property name="ObjectShortName">RST_COUNTER_WID</obj_property>
    </wvobject>
 </wave_config>

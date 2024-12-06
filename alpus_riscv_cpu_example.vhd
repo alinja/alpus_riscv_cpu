@@ -8,6 +8,8 @@ use ieee.numeric_std.all;
 
 library work;
 use work.config_pkg.all;
+use work.alpus_pll_pkg.all;
+use work.alpus_resetsync_pkg.all;
 use work.firmware_mem_pkg.all;
 use work.alpus_wb32_pkg.all;
 use work.alpus_riscv_cpu_pkg.all;
@@ -19,6 +21,7 @@ port(
 	rst : in std_logic;
 
 	txd      : inout std_logic;
+	rxd      : inout std_logic;
 	led      : inout std_logic
 );
 end entity alpus_riscv_cpu_example;
@@ -57,9 +60,39 @@ architecture example of alpus_riscv_cpu_example is
 	signal acc_ctr : integer range 0 to 63;
 
 	signal rst_ctr : unsigned(3 downto 0) := x"0";
+	signal rst_ah : std_logic;
+	signal locked : std_logic;
 	signal rst_i : std_logic;
+	signal clk_i : std_logic;
 
 begin
+	-- Convert to active high reset if available
+	rst_ah <= rst xor not RST_ACTIVE when HAS_RST = '1' else '0';
+
+	-- Unified interface for arhcitecure specific instantiations
+	pll: alpus_pll generic map (
+		ARCH => alpus_pll_arch_synth_or_sim(PLL_ARCH, "SIMULA"),
+		IN_FREQ_MHZ => PLL_FREQ_MHZ,
+		OUT0_DIV => PLL_OUT0_DIV,
+		IN_DIV => PLL_IN_DIV,
+		IN_MUL => PLL_IN_MUL
+	) port map (
+		in_clk => clk,
+		in_rst => rst_ah,
+		out_clk0 => clk_i,
+		out_locked => locked
+	);
+	-- Reset synchronizer
+	rstsync: alpus_resetsync generic map (
+		NUM_CLOCKS => 1
+	) port map (
+		slow_clk => clk,
+		arst => rst_ah,
+		locked => locked,
+		clk(0) => clk_i,
+		rst(0) => rst_i
+	);
+
 	-- Instantiate the alpus_riscv_cpu core
 	cpu: alpus_riscv_cpu generic map (
 		CPU_CHOICE => CPU_CHOICE,
@@ -71,7 +104,7 @@ begin
 		MEM2_INIT => firmware_mem_b2,
 		MEM3_INIT => firmware_mem_b3
 	) port map (
-		clk => clk,
+		clk => clk_i,
 		rst => rst_i,
 		wb_tos => wb_tos,
 		wb_tom => wb_tom,
@@ -87,7 +120,7 @@ begin
 		PINS => 2,
 		NO_INPUT => '0'
 	) port map (
-		clk => clk,
+		clk => clk_i,
 		rst => rst_i,
 		wb_tos => wb_gpio_tos,
 		wb_tom => wb_gpio_tom,
@@ -98,19 +131,9 @@ begin
 	led <= gpio(0);
 	txd <= gpio(1);
 
-	process(clk)
+	process(clk_i)
 	begin
-		if rising_edge(clk) then
-			-- self-reseting example design
-			if rst_ctr < 10 then
-				rst_i <= '1';
-				rst_ctr <= rst_ctr + 1;
-			else
-				rst_i <= '0';
-			end if;
-			if HAS_RST = '1' and rst = RST_ACTIVE then
-				rst_ctr <= x"0";
-			end if;
+		if rising_edge(clk_i) then
 
 			-- example register bank with artificially long response times
 			-- timer and gpio are required by the baremetal example software

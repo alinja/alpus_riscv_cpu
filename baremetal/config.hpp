@@ -12,11 +12,11 @@
 #define TIMER_ADDR 0x80000004
 
 //A custom Cyclone 3 board
-//#define TICKS_PER_MS 125000U
+//#define TICKS_PER_MS 100000U
 //Tang Nano 9K
-//#define TICKS_PER_MS 27000U
+//#define TICKS_PER_MS 54000U
 //Digilent Cmod A7-35T
-#define TICKS_PER_MS 12000U
+#define TICKS_PER_MS 150000U
 
 #define INCLUDE_STACK_CHECK
 #define STACK_CHECK_STACK_SIZE 128 // words

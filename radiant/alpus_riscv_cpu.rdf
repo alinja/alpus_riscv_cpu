@@ -6,11 +6,11 @@
         <Source name="../alpus_riscv_cpu.vhd" type="VHDL" type_short="VHDL">
             <Options/>
         </Source>
+        <Source name="../alpus_wb32_all.vhd" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
         <Source name="../alpus_riscv_cpu_example.vhd" type="VHDL" type_short="VHDL">
             <Options top_module="alpus_riscv_cpu_example"/>
-        </Source>
-        <Source name="../alpus_wb32_pkg.vhd" type="VHDL" type_short="VHDL">
-            <Options/>
         </Source>
         <Source name="../vexriscv/VexRiscv_Plus.v" type="Verilog" type_short="Verilog">
             <Options/>
@@ -70,6 +70,12 @@
             <Options/>
         </Source>
         <Source name="../alpus_wb_gpio.vhd" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="../alpus_pll.vhd" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="../alpus_resetsync.vhd" type="VHDL" type_short="VHDL">
             <Options/>
         </Source>
         <Source name="alpus_riscv_cpu.pdc" type="Physical Constraints File" type_short="PDC">

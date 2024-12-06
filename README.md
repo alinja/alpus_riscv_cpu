@@ -42,6 +42,11 @@ Lattice Radiant has problems with VexRiscV memory and its combinatorial paths. N
 duplicate mamories. Gowin needs MEM_RTL_AREG := '1' and serv doesn't seem to work well on HW. Libero or Radiant output is not
 tested on hardware. Radiant doesn't infer block mems well.
 
+## Alpus_wb Wishbone B4 pipelined interconnect
+
+External memory-mapped interface is implemented using the [alpus_wb](https://github.com/alinja/alpus_wb) Wishbone 
+interconnect framework.
+
 ## License
 
 I release my code here to public domain, but the CPU cores have an attribution license. See the 
